@@ -1,0 +1,11 @@
+# ignore huge files lol
+node_modules/
+
+# ignore jsconfig.json, this is just for VS code configurations
+jsconfig.json
+
+# hidden files
+.DS_Store
+
+# visual studio stuff
+.vscode/
