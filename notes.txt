@@ -1,0 +1,15 @@
+Things needed:
+
+outcome (victory or defeat) yes
+game duration yes
+summoner name yes
+
+summoner spells - need icons
+summoner runes - need icons
+champion name - need icon
+
+K/DA
+items bought during the match (names should be fine don't need any icons)
+champion level in the match
+total creep score
+creep score per minute (total creeps divided by game duration)

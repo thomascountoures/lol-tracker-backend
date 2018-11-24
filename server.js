@@ -11,9 +11,6 @@ const app = express();
 // initialize http object
 const http = require('http');
 
-// initialize cors object
-const cors = require('cors');
-
 // initialize port to production or local port
 const port = normalizePort(process.env.PORT || '1337');
 
@@ -33,7 +30,7 @@ const server = http.createServer(app);
 server.listen(port);
 
 // setup basic things
-setup(app);
+setup(express, app);
 
 /**
  * handles common system errors
