@@ -9,7 +9,7 @@ axios.defaults.adapter = require('axios/lib/adapters/http');
 /**
  * REPLACE THIS API KEY WITH YOUR OWN
  */
-const API_KEY = "RGAPI-5fd0b5a9-6352-4dd8-a6b0-554e7eee933e";
+const API_KEY = "";
 
 /**
  * NA SERVER
