@@ -42,8 +42,8 @@ const getSummonerInformation = async (summonerName) => {
  * Gets 10 latest matches
  * @param {*} summonerName 
  */
-const getRecentMatches = async (summonerData) => {
-    const response = await axios.get(`${SERVER}/lol/match/v3/matchlists/by-account/${summonerData.accountId}?endIndex=10&api_key=${API_KEY}`);
+const getRecentMatches = async (summonerData, resultsDesired) => {
+    const response = await axios.get(`${SERVER}/lol/match/v3/matchlists/by-account/${summonerData.accountId}?endIndex=${resultsDesired}&api_key=${API_KEY}`);
     return response.data.matches;
 }
 
@@ -78,9 +78,9 @@ const getMatchData = async (recentMatches) => {
  */
 summonerRouter.get("/:name", wrapPromise(async (req, res, next) => {
     const summonerData = await getSummonerInformation(req.params.name);
-    const recentMatches = await getRecentMatches(summonerData);
+    const recentMatches = await getRecentMatches(summonerData, req.query.resultsDesired);
     const matchDetails = await getMatchData(recentMatches);
-    res.status(200).json(matchDetails);
+    res.json(matchDetails);
 }));
 
 module.exports = summonerRouter;
