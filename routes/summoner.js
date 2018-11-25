@@ -33,7 +33,7 @@ const wrapPromise = fn =>
  * @param {*} summonerName 
  */
 const getSummonerInformation = async (summonerName) => {
-    const response = await axios.get(`${SERVER}/lol/summoner/v3/summoners/by-name/${summonerName}?api_key=${API_KEY}`);
+    const response = await axios.get(`${SERVER}/lol/summoner/v3/summoners/by-name/${encodeURIComponent(summonerName)}?api_key=${API_KEY}`);
     return response.data;
 }
 
